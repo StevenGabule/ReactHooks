@@ -1,9 +1,6 @@
-This project was bootstrapped with [Create React AppClass](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
+## Learn the React Hooks For Modern App
+Easy to setup and ready code examples projects.
 ### `yarn start`
 
 Runs the app in the development mode.<br />
