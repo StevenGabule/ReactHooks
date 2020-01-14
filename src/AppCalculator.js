@@ -2,8 +2,8 @@ import React, {useState} from "react";
 import "./bootstrap.min.css";
 
 const AppCalculator = () => {
-    const [firstNum, setFirstNum] = useState(0);
-    const [secondNum, setSecondNum] = useState(0);
+    const [firstNum, setFirstNum] = useState('');
+    const [secondNum, setSecondNum] = useState('');
     const [total, setTotal] = useState('');
     const [operator, setOperator] = useState(1);
     let value_;
@@ -16,10 +16,11 @@ const AppCalculator = () => {
     };
 
     const handleClickFormula = event => {
-        let _first  = Number(total);
+        let _first = Number(total);
         setFirstNum(_first);
         operator_ = event.target.value;
         setOperator(operator_);
+        setTotal('');
     };
 
     const handleBackSpace = event => {
@@ -33,7 +34,7 @@ const AppCalculator = () => {
         let _get;
 
         if (Number(operator) === 1) {
-             _get = Number(firstNum) + Number(secondNum);
+            _get = Number(firstNum) + Number(secondNum);
         }
 
         if (operator === 2) {
@@ -48,8 +49,6 @@ const AppCalculator = () => {
             _get = Number(firstNum) / Number(secondNum);
         }
         setTotal(_get)
-        // setFirstNum(0);
-        // setSecondNum(0);
     }
 
     return (<>
