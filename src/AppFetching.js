@@ -8,8 +8,9 @@ export default function App() {
     const [error, setError] = useState(null);
     const searchInputRef = useRef();
 
+    // eslint-disable-next-line
     useEffect(() => {
-        getResults()
+        getResults();
     }, [query]);
 
     const getResults = async () => {

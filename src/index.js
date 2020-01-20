@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {createContext, useContext} from 'react';
 import ReactDOM from 'react-dom';
 // import App from "./AppFunction";
 // import App from './AppClass';
@@ -7,10 +7,19 @@ import ReactDOM from 'react-dom';
 // import App from "./AppCalculatorV3";
 // import App from "./Login";
 // import App from "./Register";
-import App from "./AppFetching";
+// import App from "./AppFetching";
+import AppCRUD from "./AppCRUD";
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export const UserContext = createContext();
+const username = "dave";
+
+ReactDOM.render(
+    <UserContext.Provider value={username}>
+        <AppCRUD/>
+    </UserContext.Provider>
+    ,
+    document.getElementById('root'));
 
 if (module.hot) {
     module.hot.accept();
