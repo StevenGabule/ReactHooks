@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2ad788c-2bd1-4d1e-8c3a-bb1bd8d70b4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AppCRUD.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppFetching.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppFetching.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppCRUD.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppCRUD.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +86,7 @@
       <workItem from="1579022294625" duration="2970000" />
       <workItem from="1579249785006" duration="2781000" />
       <workItem from="1579467001780" duration="4665000" />
-      <workItem from="1579531283102" duration="1325000" />
+      <workItem from="1579531283102" duration="3181000" />
     </task>
     <servers />
   </component>
