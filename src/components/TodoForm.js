@@ -1,5 +1,7 @@
 import React, {useContext, useEffect, useState} from "react";
 import TodoContext from "../Context";
+import axios from 'axios';
+import uuidv4 from 'uuid/v4'
 
 export default function TodoForm() {
     const [todo, setTodo] = useState("");
@@ -13,12 +15,20 @@ export default function TodoForm() {
         }
     }, [currentTodo.id]);
 
-    const handleSubmit = event => {
+    const handleSubmit =async event => {
         event.preventDefault();
         if (currentTodo.text) {
-            dispatch({type: "UPDATE_TODO", payload: todo})
+            const response = await axios.patch(`https://hooks-api-glx465q80.now.sh/todos/${currentTodo.id}`, {
+                text: todo
+            });
+            dispatch({type: "UPDATE_TODO", payload: response.data})
         } else {
-            dispatch({type: "ADD_TODO", payload: todo});
+            const response= await axios.post('https://hooks-api-glx465q80.now.sh/todos', {
+                id: uuidv4(),
+                text: todo,
+                complete: false
+            });
+            dispatch({type: "ADD_TODO", payload: response.data});
         }
         setTodo("")
     };

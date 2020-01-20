@@ -1,4 +1,4 @@
-import React, {useContext, useReducer} from 'react';
+import React, {useContext, useEffect, useReducer, useState} from 'react';
 import ReactDOM from 'react-dom';
 // import App from "./AppFunction";
 // import App from './AppClass';
@@ -14,10 +14,32 @@ import TodoContext from "./Context";
 import TodoReducer from "./Reducer";
 import TodoList from "./components/TodoList";
 import TodoForm from "./components/TodoForm";
+import axios from "axios";
+
+const useAPI = endpoint => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        getData();
+    }, []);
+
+    const getData = async () => {
+        const response = await axios.get(endpoint);
+        setData(response.data);
+    }
+    return data;
+};
 
 const App = () => {
     const initialState = useContext(TodoContext);
     const [state, dispatch] = useReducer(TodoReducer, initialState);
+    const savedTodos = useAPI("https://hooks-api-glx465q80.now.sh/todos");
+    useEffect(() => {
+        dispatch({
+            type: "GET_TODOS",
+            payload: savedTodos
+        })
+    }, [savedTodos]);
     return (
         <TodoContext.Provider value={{state, dispatch}}>
             <TodoForm/>
